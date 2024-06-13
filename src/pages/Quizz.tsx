@@ -18,7 +18,7 @@ export function Quizz() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-full min-h-screen gap-5 py-20">
+    <div className="flex flex-col justify-center items-center w-full min-h-screen gap-5 pb-20 pt-10">
       {/* card 1 */}
       <motion.div
         initial={{ opacity: 0, x: -100 }}
