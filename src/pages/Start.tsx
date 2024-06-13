@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 
 export function Start() {
+  const navigate = useNavigate();
+
   return (
     <Card className="max-w-[625px] max-h-[450px] py-10 max-[540px]:py-5 border-[#750DC7] border-2">
       <CardContent className="flex flex-col justify-center items-center gap-10 max-[540px]:gap-5">
@@ -14,7 +17,10 @@ export function Start() {
         <p className="text-2xl text-center font-semibold max-[540px]:text-lg">
           Clique no botão abaixo para começar agora
         </p>
-        <Button className="w-full h-12 text-xl rounded-sm bg-gradient-to-r from-[#750DC7] to-[#9E23EA] hover:opacity-70 transition duration-250 max-[540px]:text-sm">
+        <Button
+          onClick={() => navigate("/quizz")}
+          className="w-full h-12 text-xl rounded-sm animate-pulse bg-gradient-to-r from-[#750DC7] to-[#9E23EA] hover:opacity-70 transition duration-250 max-[540px]:text-sm"
+        >
           CLIQUE AQUI PARA COMEÇAR
         </Button>
       </CardContent>
