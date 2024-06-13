@@ -8,8 +8,11 @@ import Corpo from "../assets/corpo.png";
 import Farma from "../assets/farma.png";
 import Triste from "../assets/triste.png";
 import Felicidade from "../assets/felicidade.png";
+import { useNavigate } from "react-router-dom";
 
 export function Quizz() {
+  const navigate = useNavigate();
+
   const scrollToComponent = (componentId: string) => {
     const element = document.getElementById(componentId);
     if (element) {
@@ -18,7 +21,7 @@ export function Quizz() {
   };
 
   return (
-    <div className="flex flex-col justify-center items-center w-full min-h-screen gap-5 pb-20 pt-10">
+    <div className="flex flex-col justify-center items-center w-full min-h-screen gap-5">
       {/* card 1 */}
       <motion.div
         initial={{ opacity: 0, x: -100 }}
@@ -159,10 +162,16 @@ export function Quizz() {
             </p>
 
             <div className="flex items-center justify-around w-full">
-              <Button className="flex justify-center items-center gap-2 font-semibold rounded-sm bg-green-500 shadow-sm shadow-green-600 hover:bg-green-500 hover:opacity-80">
+              <Button
+                onClick={() => navigate("/loading")}
+                className="flex justify-center items-center gap-2 font-semibold rounded-sm bg-green-500 shadow-sm shadow-green-600 hover:bg-green-500 hover:opacity-80"
+              >
                 <Laugh /> SIM
               </Button>
-              <Button className="flex justify-center items-center gap-2 font-semibold rounded-sm bg-red-600 shadow-sm shadow-red-700 hover:bg-red-600 hover:opacity-80">
+              <Button
+                onClick={() => navigate("/loading")}
+                className="flex justify-center items-center gap-2 font-semibold rounded-sm bg-red-600 shadow-sm shadow-red-700 hover:bg-red-600 hover:opacity-80"
+              >
                 <Frown /> NÃO
               </Button>
             </div>
