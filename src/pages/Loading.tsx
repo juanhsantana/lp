@@ -4,10 +4,13 @@ import { Progress } from "@/components/ui/progress";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Play } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export function Loading() {
   const [progress, setProgress] = useState<number>(0);
   const [showFinalContent, setShowFinalContent] = useState<boolean>(false);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = 5000 / 100;
@@ -77,7 +80,10 @@ export function Loading() {
               Assista um curto vídeo e veja como se livrar da candidíase de
               forma definitiva em 7 dias!
             </p>
-            <Button className="animate-pulse flex items-center gap-2 rounded-sm bg-[#01cd00] shadow-sm shadow-green-500 font-semibold">
+            <Button
+              onClick={() => navigate("/sales-page")}
+              className="animate-pulse flex items-center gap-2 rounded-sm bg-[#01cd00] hover:bg-[#01cd00] hover:opacity-80 shadow-sm shadow-green-500 font-semibold"
+            >
               <Play size={20} /> ASSISTIR VÍDEO
             </Button>
           </CardContent>
